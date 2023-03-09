@@ -1,0 +1,25 @@
+1)$ wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+
+2)$ tar -xvsf boost_1_69_0.tas.gz(разархивирование)
+
+3)$ cd boost_1_69_0/
+  $ ls -l | wc 
+  (количество всех файлов в директории)
+
+4)$ ls -l | grep "^-" | wc(количество файлов не включая вложенные директории)
+
+5)$ find -name "*.hpp" -o -name "*.h" -type d|wc -l(заголовочные файлы)
+  $ find -name "*.cpp" -not -type d|wc -l(cpp файлы)
+  $ find -not -name "*.cpp" -o -not -name "*.hpp" -o -not -name "*.h" -o -not -type d|wc -l(не заголовочные и не cpp)
+  
+6)$ readlink -f any.hpp(полный путь)
+
+7)$ grep -r "boost::asio"
+
+8)$ ./bootstrap.sh
+  $ mkdir kostya
+  $ ./b2 install —prefix=kostya
+
+9)$ mv -i kostya ~/boost-libs/(перенос компилированых библиотек в директорию)
+
+10)$ du -ah (размеры файлов в директории)
